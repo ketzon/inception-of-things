@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/terramino-go":{"create":true,"guestpath":"/home/vagrant/terramino-go","hostpath":"/home/florian/inception-of-things/vagrant/frontend/terramino-go","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/florian/inception-of-things/vagrant","disabled":false,"__vagrantfile":true}}}
