@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
       vb.cpus   = 1
       vb.memory = 1024
     end
-    srv.vm.provision "shell", path: "provision-server.sh", args: [SERVER_IP]
+    srv.vm.provision "shell", path: "scripts/provision-server.sh", args: [SERVER_IP]
   end
 
   #worker (join cluster via shared token)
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
       vb.cpus   = 1
       vb.memory = 1024
     end
-    agt.vm.provision "shell", path: "provision-worker.sh", args: [SERVER_IP]
+    agt.vm.provision "shell", path: "scripts/provision-worker.sh", args: [SERVER_IP]
   end
 end
 
