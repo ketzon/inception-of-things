@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fbessons-playground
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/ketzon/fbesson-wil-argocd.git
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  #GitOps mode, full auto
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

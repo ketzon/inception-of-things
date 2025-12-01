@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 #update package and install mandatory
 apt-get update -y
 apt-get install git figlet docker.io curl vim neofetch -y
