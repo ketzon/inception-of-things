@@ -9,3 +9,4 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+check_binary	p3/scripts/setup.sh	/^check_binary() {$/;"	f
