@@ -13,7 +13,7 @@ check_binary k3d
 check_binary kubectl
 
 # create cluster
-k3d cluster create fbessonS -p "8080:80@loadbalancer"
+k3d cluster create fbessonS -p "8888:8888@loadbalancer"
 
 # fix kube config
 mkdir -p /home/vagrant/.kube
@@ -27,11 +27,9 @@ kubectl create namespace dev
 
 # install argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-kubectl wait --for=condition=Ready -n argocd --all pod --timeout=300s
 
-# argo cd portforward
-kubectl port-forward svc/argocd-server -n argocd 8081:443 &
-disown
+#wait
+kubectl wait --for=condition=Ready -n argocd --all pod --timeout=300s
 
 # display password
 echo "Argocd password: "
