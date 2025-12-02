@@ -41,6 +41,9 @@ echo " "
 kubectl apply -n argocd -f /vagrant/confs/argocd-cm.yml
 kubectl apply -n argocd -f /vagrant/confs/argocd-deploy.yml
 
+# portforward
+nohup bash /vagrant/scripts/port-forward.sh > /var/log/port-forward.log 2>&1 &
+
 #print infos cluster
 neofetch
 if command -v figlet &>/dev/null; then
