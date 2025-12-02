@@ -4,4 +4,7 @@ metadata:
   name: argocd-cm
   namespace: argocd
 data:
-  url: https://localhost:8080
+  server:
+    insecure:  true
+  application:
+    instanceLabelKey: argocd.argoproj.io/instance
