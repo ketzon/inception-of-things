@@ -37,9 +37,18 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
   -o jsonpath="{.data.password}" | base64 --decode
 echo " "
 
+# store pw in files
+kubectl -n argocd get secret argocd-initial-admin-secret \
+  -o jsonpath="{.data.password}" | base64 --decode > /etc/pw.txt
+
 # argo cd confs
 kubectl apply -n argocd -f /vagrant/confs/argocd-cm.yml
 kubectl apply -n argocd -f /vagrant/confs/argocd-deploy.yml
+
+#alias kubectl
+if ! grep -qx 'alias k="kubectl"' /home/vagrant/.bashrc; then
+  echo 'alias k="kubectl"' >> /home/vagrant/.bashrc
+fi
 
 # portforward
 nohup bash /vagrant/scripts/port-forward.sh > /var/log/port-forward.log 2>&1 &
