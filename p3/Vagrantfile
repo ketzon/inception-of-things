@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   #expose argocd
   config.vm.network "forwarded_port", guest: 8080, host: 8080
-  #expose playground
+  #expose dev (application playground)
   config.vm.network "forwarded_port", guest: 8888, host: 8888
   config.vm.provision "shell", path: "./scripts/install.sh", name: "installation"
   config.vm.provision "shell", path: "./scripts/setup.sh", name: "setup"
