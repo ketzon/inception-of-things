@@ -18,7 +18,7 @@ if [ ! -f /vagrant/node-token ]; then
 fi
 TOKEN="$(cat /vagrant/node-token)"
 
-# Installe K3s en mode worker(agent) et rejoint le cluster
+# Installe K3s en mode worker(agent) et rejoint le cluster a son adresse grace au token
 export K3S_URL="https://${SERVER_IP}:6443"
 export K3S_TOKEN="${TOKEN}"
 curl -sfL https://get.k3s.io | sudo K3S_URL="$K3S_URL" K3S_TOKEN="$K3S_TOKEN" sh -s - agent

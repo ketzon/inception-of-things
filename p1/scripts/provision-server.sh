@@ -19,11 +19,14 @@ for i in {1..30}; do
 done
 
 # expose token/kubeconfig fichier partager
-# faire attention a l'exposition du token en prod
 sudo cp /var/lib/rancher/k3s/server/node-token /vagrant/node-token
+#
+# ----BONUS----
+# expose kubectl a la machine hote pour faire des call en dehors du cluster
 sudo cp /etc/rancher/k3s/k3s.yaml /vagrant/kubeconfig.yaml
-# Remplace 127.0.0.1 par SERVER IP dans le kubeconfig
+# Remplace 127.0.0.1 par SERVER IP dans le kubeconfig pour faire des call depuis la machine hote dans le cluster avec kubectl --kubeconfig [file] [command]
 sudo sed -i "s/127.0.0.1/${SERVER_IP}/g" /vagrant/kubeconfig.yaml
+# ----BONUS----
 
 echo "K3s server OK. Kubeconfig disponible dans /vagrant/kubeconfig.yaml"
 echo "TOKEN dans /vagrant/node-token"
