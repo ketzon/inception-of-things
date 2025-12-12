@@ -9,6 +9,4 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-EOF	bonus/scripts/repo.sh	/^kubectl -n gitlab exec -it $(get_pod) -- \/srv\/gitlab\/bin\/rails console <<EOF$/;"	h
 check_binary	p3/scripts/setup.sh	/^check_binary() {$/;"	f
-get_pod	bonus/scripts/repo.sh	/^get_pod() {$/;"	f
