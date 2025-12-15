@@ -41,6 +41,10 @@ echo " "
 kubectl -n argocd get secret argocd-initial-admin-secret \
   -o jsonpath="{.data.password}" | base64 --decode > /etc/pw.txt
 
+
+# alias 
+echo 'alias pw="cat /etc/pw.txt"' >> /home/vagrant/.bashrc
+
 # argo cd confs
 kubectl apply -n argocd -f /vagrant/confs/argocd-cm.yml
 kubectl apply -n argocd -f /vagrant/confs/argocd-deploy.yml
