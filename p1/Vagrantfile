@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     srv.vm.provider "virtualbox" do |vb|
       vb.name   = "#{TEAM_LOGIN}S"
       vb.cpus = 2
-      vb.memory = 2048
+      vb.memory = 2048 #can fit in 1gb
     end
     srv.vm.provision "shell", path: "scripts/provision-server.sh", args: [SERVER_IP]
   end
